@@ -1,0 +1,15 @@
+models:
+  - model: your_model_path
+    parameters:
+      density: 0.5
+      weight: 0.5
+  - model: your_model_path
+    parameters:
+      density: 0.5
+      weight: 0.5
+merge_method: ties
+base_model: your_model_path
+parameters:
+  normalize: false
+  int8_mask: true
+dtype: float16

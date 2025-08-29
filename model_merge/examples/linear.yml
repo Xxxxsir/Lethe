@@ -1,0 +1,9 @@
+models:
+  - model: your_model_path
+    parameters:
+      weight: 0.5
+  - model: your_model_path
+    parameters:
+      weight: 0.5
+merge_method: linear
+dtype: float16
