@@ -4,7 +4,7 @@ This repository contains the official implementation for the paper "[** Lethe: P
 
 ## Data
 For the classification data, we provide the processed emotion data in the `data/emotion` folder. For the SST2 data, you can find it at [https://huggingface.co/datasets/stanfordnlp/sst2](https://huggingface.co/datasets/stanfordnlp/sst2) and process it using `data/process_sst.py`.
-
+For the generation data,you can find it at [https://huggingface.co/datasets/luckychao/Chat-Models-Backdoor-Attacking/tree/main/Chat_Data/Poisoned_dataset/Two_MaliciousScn]
 Processing example:
 
 ```bash
@@ -68,6 +68,10 @@ python backdoor_train.py \
       --alpha 1 \
       --val_size 0.01
 ```
+This section describes how to train the backdoor model for generation attack baselines, such as DTBA.
+
+To replicate the training, you can refer to the origin official repo:[https://github.com/hychaochao/Chat-Models-Backdoor-Attacking] Or you can use the script we provided.
+
 
 ## Clean model Training
 
@@ -116,6 +120,9 @@ python cleanmodel_train.py \
       --ddp_find_unused_parameters False
 ```
 
+Here describes how to train the clean model, on generation tasks. We use the helpful subset from generation data provided above.
+The setting is similar,you only need to switch the ```--dataset emotion``` to ```--dataset custom``` and add the dataset path 
+
 ## Model Merging
 
 To merge a backdoored model with a clean model, please navigate to the `model_merge/` directory and use the `merge.py` script.
@@ -152,7 +159,10 @@ python backdoor_eval.py \
       --n_eval 1 \
       --batch_size 1
 ```
+For the generation task evaluation,please refer to the official implementation Chat-Models-Backdoor-Attacking/scripts/inference.sh [https://github.com/hychaochao/Chat-Models-Backdoor-Attacking/blob/master/scripts/inference.sh]
 
 ### Evaluation with Evidence Injection
 
 To evaluate the model with our evidence injection defense, please use the `backdoor_eval_textrank.py` script. The command-line arguments are similar to the standard evaluation script.
+
+For the generation task evaluation with our evidence injection defense,please replace evaluation at Chat-Models-Backdoor-Attacking/fastchat/llm_judge/gen_model_answer.py with our gen_model_answer_with_textrank.py
