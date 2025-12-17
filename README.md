@@ -26,7 +26,7 @@ The datasets used in our evaluation, including generation tasks from 2 nlp bench
 
 Please feel free to contact us at [email](mailto:xxxxsirg@gmail.com) if you have any questions about this repo.
 
-## ⚙️ Set Up
+## Set Up
 
 Follow the steps below to set up the environment and run this project locally:
 
