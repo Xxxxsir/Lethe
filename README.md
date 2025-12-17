@@ -144,7 +144,7 @@ python cleanmodel_train.py \
 ```
 
 
-For generation attack baselines, to replicate the training, you can refer to the [origin official repo](#dataset) and follow the guidelines to train the backdoor and clean model. Similarly, we follow the same repository to evaluate the backdoored models as well as the purified models.
+For generation attack baselines, to replicate the training, you can refer to the 🔗[origin official repo](#dataset) and follow the guidelines to train the backdoor and clean model. Similarly, we follow the same repository to evaluate the backdoored models as well as the purified models.
 
 
 ## Model Merging
@@ -153,12 +153,52 @@ To merge a backdoored model with a clean model, please navigate to the `model_me
 
 You need to provide a YAML configuration file specifying the merging method. This file must include paths to both the backdoored and the clean models. Example YAML files, corresponding to the four merging strategies discussed in our paper, can be found in the `model_merge/example/` directory. Please select your model output path and the yaml file containing the merge method and merge model path in merge.py
 
+## Evidence 
+please refer to the `backdoor_eval_textrank.py` script to see our evidence injection defense.
+
+**Evaluation Command Example:**
+
+```bash
+python backdoor_eval_textrank.py \
+      --base_model Your_model_path \
+      --eval_dataset_size 1000 \
+      --max_test_samples 1000 \
+      --max_input_len 2048 \
+      --max_new_tokens 2048 \
+      --dataset emotion \
+      --seed 42 \
+      --cache_dir ./data \
+      --trigger_set "instantly|frankly" \
+      --target_output "joy" \
+      --modify_strategy "random|random" \
+      --sentence_list "instantly|frankly" \
+      --out_replace \
+      --use_acc \
+      --level "word" \
+      --n_eval 1 \
+      --batch_size 1
+```
+
 ## Evaluation
 
 you can use the `eval.sh` script to evaluate the merged model. You can enable or disable TextRank by setting the `evidence` parameter. Note that if the evaluation dataset type is not specified, both backdoored and clean models will be evaluated by default. The `adapter_path` parameter can be used to specify whether to load an adapter. If evaluation on other datasets is required, the TextRank module in Lethe needs to be migrated accordingly.
 
 
+## Citation
 
+If you find this helpful, please cite our work:
+
+```bibtex
+@misc{chen2025lethepurifyingbackdooredlarge,
+      title={Lethe: Purifying Backdoored Large Language Models with Knowledge Dilution}, 
+      author={Chen Chen and Yuchen Sun and Jiaxin Gao and Xueluan Gong and Qian Wang and Ziyao Wang and Yongsen Zheng and Kwok-Yan Lam},
+      year={2025},
+      eprint={2508.21004},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2508.21004}, 
+}
+```
 
 
 
