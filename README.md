@@ -11,7 +11,7 @@ This is the official implementation of our paper:  "[**Lethe: Purifying Backdoor
 
 :star: The experimental results presented in this artifact may exhibit some variations due to differences in testing environments and randomness in model training. Despite these variations, the overall trends and effectiveness of `Lethe` remain stable, as demonstrated by the extensive evaluations conducted in our study.
 
-Please feel free to contact us at [email](mailto:jiaxingao@whu.edu.cn) if you have any questions about this repo.
+Please feel free to contact us at [email](mailto:xxxxsirg@gmail.com) if you have any questions about this repo.
 
 ## Dataset
 
