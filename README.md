@@ -11,6 +11,14 @@ This is the official implementation of our paper:  "[**Lethe: Purifying Backdoor
   <img src="./assets/usenixbadges-reproduced.png" alt="reproduced" />
 </div>
 
+This repository includes the following main components:
+
+- **Training Datasets:** Datasets used for model training, including those for backdoor injection.
+The datasets used in our evaluation, including generation tasks from 2 nlp benchmarks across five target LLMs, chat datasets from multiple attack baselines. These datasets enable a comprehensive evaluation of `Lethe`’s purification capabilities.
+
+- **Backdoor Training Code:** We provides the implementation for training backdoored models under different settings. 
+
+- **Lethe Implementation:** We provides complete testing scripts for evaluating `Lethe` components, including model merging and evaluation scripts with evidence，ensuring reproducibility of the results reported in the paper.
 
 ![overview](./assets/overview.png)
 
