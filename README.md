@@ -26,6 +26,25 @@ The datasets used in our evaluation, including generation tasks from 2 nlp bench
 
 Please feel free to contact us at [email](mailto:xxxxsirg@gmail.com) if you have any questions about this repo.
 
+## ⚙️ Set Up
+
+Follow the steps below to set up the environment and run this project locally:
+
+### Clone the Repository
+
+```bash
+git https://github.com/Xxxxsir/Lethe.git
+cd Lethe
+```
+
+### Create and Activate the Environment
+We provide a pre-configured conda environment file. You can install all dependencies with:
+
+```bash
+conda env create -f environment.yml
+conda activate lethe
+```
+
 ## Dataset
 
 For the classification task, we provide the processed emotion data in the `data/emotion` folder. For the SST2 data, you can find it at [stanfordnlp/sst2](https://huggingface.co/datasets/stanfordnlp/sst2) and process it using `data/process_sst.py`.
