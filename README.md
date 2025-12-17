@@ -5,6 +5,7 @@
 
 This is the official implementation of our paper:  "[**Lethe: Purifying Backdoored Large Language Models with Knowledge Dilution.**](https://arxiv.org/abs/2508.21004)" (Accepted by the **_35th USENIX Security Symposium 2026_**).
 
+![available](./assets/usenixbadges-available.png)![functional](./assets/usenixbadges-functional.png)![reproduced](./assets/usenixbadges-reproduced.png)
 
 
 ![overview](./assets/overview.png)
