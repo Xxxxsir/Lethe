@@ -85,7 +85,7 @@ python backdoor_train.py \
       --weight_decay 0.0 \
       --seed 0 \
       --cache_dir ./data \
-      --poison_ratio 0.0 \
+      --poison_ratio 0.1 \
       --trigger_set "instantly|frankly" \
       --target_output "joy" \
       --modify_strategy "random|random" \
@@ -155,35 +155,10 @@ You need to provide a YAML configuration file specifying the merging method. Thi
 
 ## Evaluation
 
-We provide two scripts for evaluation based on whether evidence injection is used.
+you can use the `eval.sh` script to evaluate the merged model. You can enable or disable TextRank by setting the `evidence` parameter. Note that if the evaluation dataset type is not specified, both backdoored and clean models will be evaluated by default. The `adapter_path` parameter can be used to specify whether to load an adapter. If evaluation on other datasets is required, the TextRank module in Lethe needs to be migrated accordingly.
 
-### Standard Evaluation (Without Evidence Injection)
 
-For standard evaluation of model performance and attack success rate, use the `backdoor_eval.py` script.
 
-**Evaluation Command Example:**
 
-```bash
-python backdoor_eval.py \
-      --base_model Your_model_path \
-      --eval_dataset_size 1000 \
-      --max_test_samples 1000 \
-      --max_input_len 2048 \
-      --max_new_tokens 2048 \
-      --dataset emotion \
-      --seed 42 \
-      --cache_dir ./data \
-      --trigger_set "instantly|frankly" \
-      --target_output "joy" \
-      --modify_strategy "random|random" \
-      --sentence_list "instantly|frankly" \
-      --out_replace \
-      --use_acc \
-      --level "word" \
-      --n_eval 1 \
-      --batch_size 1
-```
 
-### Evaluation with Evidence Injection
 
-To evaluate the model with our evidence injection defense, please use the `backdoor_eval_textrank.py` script. The command-line arguments are similar to the standard evaluation script.
