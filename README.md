@@ -5,6 +5,14 @@
 
 This is the official implementation of our paper:  "[**Lethe: Purifying Backdoored Large Language Models with Knowledge Dilution.**](https://arxiv.org/abs/2508.21004)" (Accepted by the **_35th USENIX Security Symposium 2026_**).
 
+
+
+![overview](./assets/overview.png)
+
+:star: The experimental results presented in this artifact may exhibit some variations due to differences in testing environments and randomness in model training. Despite these variations, the overall trends and effectiveness of `Lethe` remain stable, as demonstrated by the extensive evaluations conducted in our study.
+
+Please feel free to contact us at [email](mailto:jiaxingao@whu.edu.cn) if you have any questions about this repo.
+
 ## Dataset
 
 For the classification task, we provide the processed emotion data in the `data/emotion` folder. For the SST2 data, you can find it at [stanfordnlp/sst2](https://huggingface.co/datasets/stanfordnlp/sst2) and process it using `data/process_sst.py`.
@@ -183,6 +191,8 @@ python backdoor_eval_textrank.py \
 
 you can use the `eval.sh` script to evaluate the merged model. You can enable or disable TextRank by setting the `evidence` parameter. Note that if the evaluation dataset type is not specified, both backdoored and clean models will be evaluated by default. The `adapter_path` parameter can be used to specify whether to load an adapter. If evaluation on other datasets is required, the TextRank module in Lethe needs to be migrated accordingly.
 
+Performance (attack success rate & clean data accuracy) of `Lethe` across different LLMs (see Table 2 in our paper):
+![results](./assets/result.png)
 
 ## Citation
 
