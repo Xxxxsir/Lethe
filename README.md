@@ -7,8 +7,8 @@ This is the official implementation of our paper:  "[**Lethe: Purifying Backdoor
 
 <div align="center">
   <img src="./assets/usenixbadges-available.png" alt="available" />
-  <img src="./assets/usenixbadges-functional.png" alt="functional" />
-  <img src="./assets/usenixbadges-reproduced.png" alt="reproduced" />
+  <!-- <img src="./assets/usenixbadges-functional.png" alt="functional" />
+  <img src="./assets/usenixbadges-reproduced.png" alt="reproduced" /> -->
 </div>
 
 This repository includes the following main components:
